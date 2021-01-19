@@ -4,7 +4,7 @@ description: 這是用於個人學習ELK 架構紀錄 安裝操作步驟
 
 # ELK 練習
 
-## Getting Super Powers
+## 安裝Elasticsearch
 
 Becoming a super hero is a fairly straight forward process:
 
