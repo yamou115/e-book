@@ -9,21 +9,31 @@ description: 這是用於個人學習ELK 架構紀錄 安裝操作步驟
 Becoming a super hero is a fairly straight forward process:
 
 ```
-$ give me super-powers
+rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 ```
 
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
+添加yum 安裝源
 
-Once you're strong enough, save the world:
-
-{% code title="hello.sh" %}
 ```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
+vi /etc/yum.repos.d/elasticsearch.repo
+
+[elasticsearch]
+name=Elasticsearch repository for 7.x packages
+baseurl=https://artifacts.elastic.co/packages/7.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=0
+autorefresh=1
+type=rpm-md
 ```
-{% endcode %}
+
+安裝Elasticsearch 
+
+```text
+yum install --enablerepo=elasticsearch elasticsearch
+```
+
+
 
 
 
